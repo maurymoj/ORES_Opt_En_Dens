@@ -26,7 +26,7 @@ T_amb = 298.15;
 P_amb = 101325;
 
 % System parameters and requirements
-fluid = 'R134a';
+fluid = 'R141b';
 % W_g = 2000;     % Generated power
 W_g = 1000000;  % 1 MW
 W_c = 0.2*W_g;% Consumed power
@@ -1855,5 +1855,5 @@ end
     C_aux = cost_index(2018)/cost_index(2009)*328*( (sum(m_disch.*w_t.*dt)./3600) )./1000;
     
     CAPEX = C_fluid + C_tank + C_turb + C_pump + C_aux;
-    [V_HPT;V_LPT]
+    [V_HPT;V_LPT];
 end
