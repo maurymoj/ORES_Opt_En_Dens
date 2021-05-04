@@ -11,7 +11,7 @@ P_max = 0.95*CoolProp.Props1SI(fluid,'Pcrit');
 
 fun = @ORES_tr_opt;
 nvars = 3;
-lb = [1;1;P_min];
+lb = [1.2;1.2;1.5*P_min];
 ub = [4;4;P_max];
 
 % call optimization

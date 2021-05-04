@@ -7,5 +7,6 @@ function [Obj] = ORES_tr_opt(x)
     [eta_RT,rho_E] = ORES_tr('K_V_HPT',K_V_H,'K_V_LPT',K_V_L,'P_HPT',P_H);
 
 %     Obj = -rho_E;
-    Obj = -eta_RT;
+%     Obj = -eta_RT;
+    Obj = -rho_E-eta_RT;
 end
