@@ -57,8 +57,8 @@ x_HPT_f_ch = 0.02;
 x_LPT_f_ch = 0.98;
 
 %
-K_V_H = 2; % Ratio of volume of the HPT over the minimum required volume
-K_V_L = 1; % Ratio of V_LPT over V_HPT
+K_V_H = 1.2; % Ratio of volume of the HPT over the minimum required volume
+K_V_L = 1.2; % Ratio of V_LPT over V_HPT
 
 Heat_source = 'HPs';
 COP_HP1_0 = 0;
