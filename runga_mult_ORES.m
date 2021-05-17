@@ -18,9 +18,11 @@ ub = [4;4;P_max];
 
 % call optimization
 rng default % For reproducibility
-options = optimoptions(@gamultiobj,...%'OutputFcn',@outfun,... 
-    'Display','iter');
-[x,fval,exitflag] = gamultiobj(fun,nvars,[],[],[],[],lb,ub,[],options)
+options = optimoptions('gamultiobj','PlotFcn',@gaplotpareto);
+% options = optimoptions(@gamultiobj,...%'OutputFcn',@outfun,... 
+%     'Display','iter');
+
+[x,fval,exitflag,output,population,scores] = gamultiobj(fun,nvars,[],[],[],[],lb,ub,@mycon,options);
 % 
 % function stop = outfun(optimValues,state)
 %      stop = false;

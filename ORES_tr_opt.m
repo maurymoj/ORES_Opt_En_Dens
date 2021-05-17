@@ -8,5 +8,5 @@ function [Obj] = ORES_tr_opt(x)
 
 %     Obj = -rho_E;
 %     Obj = -eta_RT;
-    Obj = -rho_E;
+    Obj = [-eta_RT,-rho_E];
 end
