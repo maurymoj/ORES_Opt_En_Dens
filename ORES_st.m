@@ -26,7 +26,7 @@ T_amb = 298.15;
 % P_amb = 101325;
 
 % System parameters and requirements
-fluid = 'R134a';
+fluid = 'R141b';
 % W_t = 2000;
 % W_p = 0.2*W_t;
 
