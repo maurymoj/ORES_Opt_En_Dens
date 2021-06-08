@@ -5,7 +5,7 @@ history.x = [];
 history.fval = [];
 % searchdir = [];
 
-fluid = 'R141b';
+fluid = 'R365mfc';
 P_min = CoolProp.PropsSI('P','T',298.15,'Q',0,fluid);
 P_max = 0.95*CoolProp.Props1SI(fluid,'Pcrit');
 
@@ -18,7 +18,7 @@ ub = [4;4;P_max];
 
 % call optimization
 rng default % For reproducibility
-options = optimoptions('gamultiobj','PlotFcn',@gaplotpareto);
+options = optimoptions('gamultiobj','PlotFcn',@gaplotpareto,'FunctionTolerance',1e-2);
 % options = optimoptions(@gamultiobj,...%'OutputFcn',@outfun,... 
 %     'Display','iter');
 

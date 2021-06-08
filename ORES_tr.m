@@ -1,4 +1,4 @@
-function [eta_RT,rho_E_L,t_generation,erro,CAPEX]= ORES_tr(varargin)
+function [eta_RT,rho_E_L,t_generation,erro,CAPEX,C_fluid,C_tank,C_turb,C_pump,C_aux]= ORES_tr(varargin)
 % ORES_TR Transient operation model
 %   ORES_tr()
 
