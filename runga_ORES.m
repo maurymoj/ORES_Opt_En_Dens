@@ -5,7 +5,7 @@ history.x = [];
 history.fval = [];
 % searchdir = [];
 
-fluid = 'R141b';
+fluid = 'R365mfc';
 P_min = CoolProp.PropsSI('P','T',298.15,'Q',0,fluid);
 P_max = 0.95*CoolProp.Props1SI(fluid,'Pcrit');
 
@@ -14,11 +14,12 @@ nvars = 3;
 lb = [1.2;1.2;1.5*P_min];
 ub = [4;4;P_max];
 
+
 % call optimization
 rng default % For reproducibility
 options = optimoptions(@ga,'OutputFcn',@outfun,... 
     'Display','iter');
-[x,fval] = ga(fun,nvars,[],[],[],[],lb,ub,[],options)
+[x,fval] = ga(fun,nvars,[],[],[],[],lb,ub,@mycon,options)
 
 function [state,options,optchanged] = outfun(options,state,flag)
      
