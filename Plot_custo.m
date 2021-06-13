@@ -18,18 +18,19 @@ end
 
 Obj = [eta_RT,rho_E_L];
 
-groups = ['High density','Intermediary','High density','Intermediary','Intermediary',...
-'High density','High efficiency','Intermediary','High density','High efficiency',...
-'High efficiency','High efficiency','Intermediary','Intermediary','High density',...
+groups = ['High density','Balanced','High density','Balanced','Balanced',...
+'High density','High efficiency','Balanced','High density','High efficiency',...
+'High efficiency','High efficiency','Balanced','Balanced','High density',...
 'High efficiency','High efficiency','High efficiency'];
+%%
 
 figure('Color',[1 1 1])
-plot3(obj(strcmpi(groups,"Intermediary"),1),obj(strcmpi(groups,"Intermediary"),2),CAPEX(strcmpi(groups,"Intermediary"),1),'Or')
+plot3(obj(strcmpi(groups,"Balanced"),1),obj(strcmpi(groups,"Balanced"),2),CAPEX(strcmpi(groups,"Balanced"),1),'Or')
 hold on
 grid on
 plot3(obj(strcmpi(groups,"High density"),1),obj(strcmpi(groups,"High density"),2),CAPEX(strcmpi(groups,"High density"),1),'Ob')
 plot3(obj(strcmpi(groups,"High efficiency"),1),obj(strcmpi(groups,"High efficiency"),2),CAPEX(strcmpi(groups,"High efficiency"),1),'O','Color',[0.93 0.69 0.13])
-legend('Intermediary','High density','High efficiency')
+legend('Balanced','High density','High efficiency')
 xlabel('\eta_{RT}')
 ylabel('\rho_E')
 zlabel('CAPEX')
@@ -43,7 +44,7 @@ zlabel('CAPEX')
 
 figure('Color',[1 1 1])
 plot3(x(:,1),x(:,2),x(:,3),'O')
-plot3(x(strcmpi(groups,"Intermediary"),1),x(strcmpi(groups,"Intermediary"),2),x(strcmpi(groups,"Intermediary"),3),'Or')
+plot3(x(strcmpi(groups,"Balanced"),1),x(strcmpi(groups,"Balanced"),2),x(strcmpi(groups,"Balanced"),3),'Or')
 hold on
 grid on
 plot3(x(strcmpi(groups,"High density"),1),x(strcmpi(groups,"High density"),2),x(strcmpi(groups,"High density"),3),'Ob')
