@@ -79,7 +79,22 @@ xlabel('K_{V_H}')
 ylabel('K_{V_L}')
 zlabel('P_H')
 
-%% 
+%% Plot Obj com text
+figure('Color',[1 1 1])
+plot(Obj(:,1),Obj(:,2),'O')
+hold on
+grid on
+xlim([0.6 0.74])
+ylim([0.4 2])
+text(Obj(I,1),Obj(I,2) + 0.05,num2str([1:18]'))
+xtickformat('%.2f')
+ytickformat('%.2f')
+
+
+xlabel('Round-trip efficiency, \eta_{RT}')
+ylabel('Energy density, \rho_{E_v}')
+
+%% Plot CAPEX + Obj + Vars de decisao
 figure('Color',[1 1 1])
 subplot(3,1,1)
 % stacked bar graph for costs
@@ -97,8 +112,9 @@ b = bar(Costs_ord,'stacked','DisplayName','Custos');
 legend('C_{fluid}','C_{tank}','C_{Ex}','C_{pump}','C_{aux}','Location','northwestoutside')
 grid on
 ylabel('Cost (M$)')
-ytickformat('%.1f')
+ytickformat('%.2f')
 ylim([0 8])
+xlim([1 18])
 
 for i=1:size(newcolors,1)
     b(i).FaceColor = newcolors(i,:);
@@ -113,6 +129,8 @@ ylabel(hAx(1),'\eta_{RT}') % left y-axis
 ylabel(hAx(2),'\rho_{E_V}, (kWh m^{-3})') % right y-axis
 ylim(hAx(1),[0.60 0.76])
 ylim(hAx(2),[0 2])
+xlim(hAx(1),[1 18])
+xlim(hAx(2),[1 18])
 ytickformat(hAx(1),'%.2f')
 ytickformat(hAx(2),'%.1f')
 grid on
@@ -126,5 +144,7 @@ ytickformat(hAx(1),'%.2f')
 ytickformat(hAx(2),'%.1f')
 ylabel(hAx(2),'P_H, (MPa)') % right y-axis
 ylim(hAx(2),[2.8 4])
+xlim(hAx(1),[1 18])
+xlim(hAx(2),[1 18])
 grid on
 legend('K_{V_H}','K_{V_L}','P_H','Location','northwestoutside')
